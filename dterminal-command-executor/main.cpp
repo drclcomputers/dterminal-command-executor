@@ -5,9 +5,11 @@
 #ifdef _WIN32
 #include<direct.h>
 #define CLEARSCR "cls"
+bool ok = 1;
 #else
 #include<unistd.h>
 #define CLEARSCR "clear"
+bool ok = 0;
 #endif
 
 #define RED "\033[31m"
@@ -16,15 +18,11 @@
 #define WHITE "\033[37m"
 #define BLUE "\033[34m"
 
-#ifdef _WIN32
-bool ok = 1;
-#endif
-
 using namespace std;
 
 int main() {
 	system(CLEARSCR);
-	cout << BLUE << "DTerminal\n\n";
+	cout << BLUE << "DTerminal ver 1.2\n\n";
 	char command[1001];
 	while (strcmp(command, "exit") != 0) {
 		cout << GREEN << "shell > " << WHITE;
